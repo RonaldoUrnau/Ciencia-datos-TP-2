@@ -1,6 +1,6 @@
-# Análisis de Datos de Fórmula 1 (1950-2020)
+# Análisis de Datos de Fórmula 1 (1950-2024)
 
-Este proyecto tiene como objetivo analizar datos históricos de la Fórmula 1 desde 1950 hasta 2020 para responder a una serie de preguntas de investigación y visualizar los resultados.
+Este proyecto tiene como objetivo analizar datos históricos de la Fórmula 1 desde 1950 hasta 2024 para responder a una serie de preguntas de investigación y visualizar los resultados.
 
 ## Estructura del Proyecto
 
