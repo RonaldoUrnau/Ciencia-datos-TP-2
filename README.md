@@ -58,59 +58,7 @@ Para ejecutar el análisis, sigue estos pasos:
 
 Una vez ejecutado, el script generará los gráficos en el directorio `archive/`.
 
-## Diagrama de Flujo de Datos
 
-```mermaid
-graph TD
-    A[Inicio] --> B(Cargar Archivos CSV);
-    B --> C{Limpieza y Preprocesamiento de Datos};
-    C --> D1(P1: Primer/Último Piloto);
-    C --> D2(P2: Primer/Último Ganador);
-    C --> D3(P3: Conteo y Comparación de Pilotos Argentinos);
-    C --> D4(P4: Puntos Totales por Piloto);
-    C --> D5(P5: Victorias Totales por Piloto y Más Ganador);
-    C --> D6(P6: Campeonatos Argentinos);
-    C --> D7(P7: Rendimiento Argentino a lo Largo de los Años y Proporción de Victorias);
-    C --> D8(P8: Análisis de Franco Colapinto);
-    D1 --> E(Salida P1);
-    D2 --> E;
-    D3 --> E;
-    D4 --> E;
-    D5 --> E;
-    D6 --> E;
-    D7 --> E;
-    D8 --> E;
-    E --> F[Fin];
 
-    subgraph Fuentes de Datos
-        drivers_csv[drivers.csv]
-        races_csv[races.csv]
-        results_csv[results.csv]
-        driver_standings_csv[driver_standings.csv]
-    end
 
-    subgraph Procesamiento de Datos
-        B --> drivers_csv;
-        B --> races_csv;
-        B --> results_csv;
-        B --> driver_standings_csv;
-        C --> D1;
-        C --> D2;
-        C --> D3;
-        C --> D4;
-        C --> D5;
-        C --> D6;
-        C --> D7;
-        C --> D8;
-    end
 
-    subgraph Uniones Clave
-        J1(results + races)
-        J2(J1 + drivers)
-        J3(driver_standings + races)
-        J4(J3 + drivers)
-    end
-
-    D1, D2, D4, D5, D7, D8 --> J2;
-    D6 --> J4;
-    D3 --> drivers_csv;
